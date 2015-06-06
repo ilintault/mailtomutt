@@ -6,9 +6,10 @@
     #import <Cocoa/Cocoa.h>
 #endif
 
+#define VERBOSE_DEBUG_OUTPUT 1
 
 #ifdef VERBOSE_DEBUG_OUTPUT
-	#warning Debugging output enabled
+	// warning Debugging output enabled
 	#define NSDebug(x, ...) NSLog([ NSString stringWithFormat:@"%s: %@", __PRETTY_FUNCTION__, x], ## __VA_ARGS__ )
 #else
 	#define NSDebug(x, ...) /* x, ## __VA_ARGS__ */

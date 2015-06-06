@@ -16,6 +16,8 @@
 		241209A0144AF3F9008016C6 /* version.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24120999144AF3F9008016C6 /* version.plist */; };
 		241209A6144AF52D008016C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 241209A2144AF52D008016C6 /* InfoPlist.strings */; };
 		241209A7144AF52D008016C6 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 241209A4144AF52D008016C6 /* MainMenu.nib */; };
+		3CB5BD951B211294005C70FE /* MailToMutt.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 3CB5BD941B211294005C70FE /* MailToMutt.sdef */; };
+		3CB5BD971B2112F9005C70FE /* MailToMuttCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5BD961B2112F9005C70FE /* MailToMuttCommand.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +37,11 @@
 		24120997144AF3F9008016C6 /* URLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHandler.h; sourceTree = SOURCE_ROOT; };
 		24120998144AF3F9008016C6 /* URLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLHandler.m; sourceTree = SOURCE_ROOT; };
 		24120999144AF3F9008016C6 /* version.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = SOURCE_ROOT; };
-		241209A3144AF52D008016C6 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
+		241209A3144AF52D008016C6 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		241209A5144AF52D008016C6 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = MainMenu.nib; sourceTree = "<group>"; };
+		3CB5BD931B21122D005C70FE /* MailToMuttCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailToMuttCommand.h; sourceTree = SOURCE_ROOT; };
+		3CB5BD941B211294005C70FE /* MailToMutt.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MailToMutt.sdef; sourceTree = SOURCE_ROOT; };
+		3CB5BD961B2112F9005C70FE /* MailToMuttCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailToMuttCommand.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +102,14 @@
 				24120992144AF3F9008016C6 /* main.m */,
 				24120993144AF3F9008016C6 /* Mutt.h */,
 				24120994144AF3F9008016C6 /* Mutt.m */,
+				3CB5BD941B211294005C70FE /* MailToMutt.sdef */,
 				24120995144AF3F9008016C6 /* NSStringExt.h */,
 				24120996144AF3F9008016C6 /* NSStringExt.m */,
 				24120997144AF3F9008016C6 /* URLHandler.h */,
 				24120998144AF3F9008016C6 /* URLHandler.m */,
 				24120999144AF3F9008016C6 /* version.plist */,
+				3CB5BD931B21122D005C70FE /* MailToMuttCommand.h */,
+				3CB5BD961B2112F9005C70FE /* MailToMuttCommand.m */,
 			);
 			path = MailtoMutt;
 			sourceTree = "<group>";
@@ -141,7 +149,7 @@
 		24120961144AEC75008016C6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0630;
 			};
 			buildConfigurationList = 24120964144AEC75008016C6 /* Build configuration list for PBXProject "MailtoMutt" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -168,6 +176,7 @@
 			files = (
 				2412099B144AF3F9008016C6 /* MailtoMutt.icns in Resources */,
 				241209A0144AF3F9008016C6 /* version.plist in Resources */,
+				3CB5BD951B211294005C70FE /* MailToMutt.sdef in Resources */,
 				241209A6144AF52D008016C6 /* InfoPlist.strings in Resources */,
 				241209A7144AF52D008016C6 /* MainMenu.nib in Resources */,
 			);
@@ -182,6 +191,7 @@
 			files = (
 				2412099C144AF3F9008016C6 /* main.m in Sources */,
 				2412099D144AF3F9008016C6 /* Mutt.m in Sources */,
+				3CB5BD971B2112F9005C70FE /* MailToMuttCommand.m in Sources */,
 				2412099E144AF3F9008016C6 /* NSStringExt.m in Sources */,
 				2412099F144AF3F9008016C6 /* URLHandler.m in Sources */,
 			);
@@ -212,6 +222,7 @@
 		24120966144AEC75008016C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};
@@ -225,7 +236,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -256,7 +267,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -295,6 +306,7 @@
 				2412098C144AF386008016C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

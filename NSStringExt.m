@@ -26,7 +26,7 @@
 					[ clean appendString:@"\015\012    " ]; /* RFC822 header continuations are CRLF, then whitespace */
 					[ clean appendString:line ];
 				} else {
-					NSDebug(@"Empty line");
+					NSLog(@"Empty line");
 				}
 			}
 
@@ -34,7 +34,7 @@
 		}
 	}
 
-	NSDebug(@"Empty string escaped for header");
+	NSLog(@"Empty string escaped for header");
 
 	return @"";
 }

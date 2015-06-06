@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+
+<dictionary title="MailToMutt">
+    <suite name="MailToMutt Suite" code="MaTM" description="MailToMutt Scripts">
+        <command name="mailto" code="lkpstrng" description="processes mailto">
+            <cocoa class="MailToMuttCommand"/>
+            <direct-parameter description="The encoded mailto url">
+                <type type="text"/>
+            </direct-parameter>
+        </command>
+    </suite>
+</dictionary>
