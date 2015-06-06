@@ -1,5 +1,13 @@
 # mailtomutt
+
+Version 0.5
+-----------
+
 Updated mailtomutt that  handles to,cc,bcc,subject,attachments, immediate sending and is applescript capable
+
+Original MailToMutt is:
+
+http://mailtomutt.sourceforge.net
 
 # Caveats
 
