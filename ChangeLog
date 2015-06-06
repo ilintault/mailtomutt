@@ -1,0 +1,5 @@
+2004/06/23 andre
+- mailtomutt exits after launching the terminal window
+- terminal window closes on mutt's exit
+2004/06/24 andre
+- removed 'terminate' again :-/ takes too long to launch
