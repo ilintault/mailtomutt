@@ -44,17 +44,19 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>0.5</string>
-	<key>NSMainNibFile</key>
-	<string>MainMenu</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.productivity</string>
 	<key>LSEnvironment</key>
 	<dict>
 		<key>NSDebugEnabled</key>
 		<string>YES</string>
 	</dict>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
 	<key>NSAppleScriptEnabled</key>
 	<true/>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
 	<key>OSAScriptingDefinition</key>
 	<string>MailToMutt.sdef</string>
 </dict>
