@@ -16,7 +16,6 @@
 		241209A0144AF3F9008016C6 /* version.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24120999144AF3F9008016C6 /* version.plist */; };
 		241209A6144AF52D008016C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 241209A2144AF52D008016C6 /* InfoPlist.strings */; };
 		241209A7144AF52D008016C6 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 241209A4144AF52D008016C6 /* MainMenu.nib */; };
-		3C648F7C1B2359A5005C70FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C648F7B1B2359A5005C70FE /* Images.xcassets */; };
 		3C67860A1B235CF7005C70FE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3C6786091B235CF7005C70FE /* LICENSE */; };
 		3C6786101B235D07005C70FE /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 3C67860D1B235D07005C70FE /* ChangeLog */; };
 		3CB5BD951B211294005C70FE /* MailToMutt.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 3CB5BD941B211294005C70FE /* MailToMutt.sdef */; };
@@ -42,7 +41,6 @@
 		24120999144AF3F9008016C6 /* version.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = SOURCE_ROOT; };
 		241209A3144AF52D008016C6 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; lineEnding = 0; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		241209A5144AF52D008016C6 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = MainMenu.nib; sourceTree = "<group>"; };
-		3C648F7B1B2359A5005C70FE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3C6786061B235A69005C70FE /* MailtoMutt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MailtoMutt.entitlements; sourceTree = "<group>"; };
 		3C6786071B235CDC005C70FE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3C6786091B235CF7005C70FE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
@@ -122,7 +120,6 @@
 				24120999144AF3F9008016C6 /* version.plist */,
 				3CB5BD931B21122D005C70FE /* MailToMuttCommand.h */,
 				3CB5BD961B2112F9005C70FE /* MailToMuttCommand.m */,
-				3C648F7B1B2359A5005C70FE /* Images.xcassets */,
 			);
 			path = MailtoMutt;
 			sourceTree = "<group>";
@@ -201,7 +198,6 @@
 				3CB5BD951B211294005C70FE /* MailToMutt.sdef in Resources */,
 				3C67860A1B235CF7005C70FE /* LICENSE in Resources */,
 				3C6786101B235D07005C70FE /* ChangeLog in Resources */,
-				3C648F7C1B2359A5005C70FE /* Images.xcassets in Resources */,
 				241209A6144AF52D008016C6 /* InfoPlist.strings in Resources */,
 				241209A7144AF52D008016C6 /* MainMenu.nib in Resources */,
 			);

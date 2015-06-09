@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1705FE75-5C19-4EE6-A9A1-BF263817F706</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>MailtoMutt</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>CC8AE9BCA3F25B5EAB8DDCC56CF7324C8002B167</key>
 		<string>https://github.com/ilintault/mailtomutt.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MailtoMutt.xcodeproj/project.xcworkspace</string>
+	<string>MailtoMutt.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>CC8AE9BCA3F25B5EAB8DDCC56CF7324C8002B167</key>
