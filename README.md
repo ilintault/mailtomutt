@@ -13,6 +13,10 @@ A fork of MailToMutt from:
 * Option for immediate sending without user interaction via send-now=yes in
   the mailto: url
 
+## Binaries
+
+[Version 0.5](https://github.com/ilintault/mailtomutt/releases/download/0.5/MailtoMutt.app.zip)
+
 ## Caveats
 
 This only works with Iterm2 at the moment.  It's possible to use Terminal, but the script that launches mutt must be changed in Mutt.m
