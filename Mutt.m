@@ -101,11 +101,11 @@
     
     if (_can_send_now)
     {
-        [mutt_command appendFormat:@"%@ ",self.to];
+        [mutt_command appendFormat:@"'%@' ",self.to];
         if ([self.cc length]>0)
-            [mutt_command appendFormat:@"-c %@ ",self.cc];
+            [mutt_command appendFormat:@"-c '%@' ",self.cc];
         if ([self.bcc length]>0)
-            [mutt_command appendFormat:@"-b %@ ",self.bcc];
+            [mutt_command appendFormat:@"-b '%@' ",self.bcc];
         [mutt_command appendFormat:@"-s '%@' ",self.subject];
     }
 
@@ -116,8 +116,9 @@
     
     if (_has_attachment)
     {
-        [mutt_command appendString:@" -a "];
+        [mutt_command appendString:@" -a '"];
         [mutt_command appendString:self.attachment_url];
+        [mutt_command appendString:@"'"];
     }
     
     if (_can_send_now)
