@@ -15,6 +15,7 @@ A fork of MailToMutt from:
 
 ## Binaries
 
+[Version 0.51](https://github.com/ilintault/mailtomutt/releases/download/0.51/MailtoMutt.app.zip)
 [Version 0.5](https://github.com/ilintault/mailtomutt/releases/download/0.5/MailtoMutt.app.zip)
 
 ## Caveats
