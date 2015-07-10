@@ -5,7 +5,6 @@
 #import "Mutt.h"
 
 @implementation URLHandler {
-    Mutt *mutt;
     BOOL _initialize;
 }
 
@@ -24,19 +23,10 @@
     // will continue to try and send notification objects to the deallocated
     // object.
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [mutt release];
     [super dealloc];
     NSLog(@"-URLHandler:dealloc");
 }
 
-
-// receives the apple event
-- (void) receiveURLNotification:(NSNotification *) notification
-{
-    NSDictionary *userInfo = notification.userInfo;
-    NSString *urlString = [userInfo objectForKey:@"url"];
-    [ self handleEventString:urlString ];
-}
 
 - (void)awakeFromNib
 {
@@ -57,34 +47,37 @@
              forEventClass: kInternetEventClass
              andEventID: kAEGetURL ];
             NSLog(@"Registered for apple event");
-            
-            if (!mutt)
-            {
-                mutt = [[Mutt alloc] init];
-            }
-            
-            if (mutt)
-                NSLog(@"Mutt variable initalized\n");
-            else
-                NSLog(@"Failed to initialize mutt variable\n");
-          
         }
     }
 }
 
+
+// receives the apple event for AppleScript
+- (void) receiveURLNotification:(NSNotification *) notification
+{
+    NSDictionary *userInfo = notification.userInfo;
+    NSString *urlString = [userInfo objectForKey:@"url"];
+    [NSThread detachNewThreadSelector:@selector(handleEventString:) toTarget:self withObject:urlString];
+}
+
+// handles mailto: event
 - (void)getUrl:(NSAppleEventDescriptor *)event
 {
-	NSString *urlString = [[event paramDescriptorForKeyword:'----'] stringValue ];
-	
-    [ self handleEventString:urlString ];
+   NSString *urlString = [[event paramDescriptorForKeyword:'----'] stringValue ];
+   [NSThread detachNewThreadSelector:@selector(handleEventString:) toTarget:self withObject:urlString];
 }
 
 // handle the event string and parse it
 - (void)handleEventString:(NSString *)urlString
 {
+    NSDebug(@"Thread <<%@>>",[NSThread currentThread] );
     NSDebug(@"GetURL apple event received with <<%@>>", urlString);
     
-    NSURL *url = [ NSURL URLWithString:urlString ]; // get the URL delivered by the apple event
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init]; // Top-level pool
+    
+    Mutt *mutt = [[[Mutt alloc] init] autorelease];
+    
+    NSURL *url = [ NSURL URLWithString:urlString]; // get the URL delivered by the apple event
         
     if (url == nil){ // if NSURL did not eat it, then we give up
          NSLog(@"couldn't parse URL");
@@ -136,12 +129,11 @@
 
     NSDebug(@"To: '%@' CC: '%@' BCC: '%@' Attachment-url: '%@' Subject: '%@' and Body:\n<<EOF\n%@\nEOF", email, [paramDict valueForKey:@"cc"],[paramDict valueForKey:@"cc"], [paramDict valueForKey:@"attachment-url"],[paramDict valueForKey:@"subject" ], [ paramDict valueForKey:@"body" ]);
 	
-	/* create the message using ultraleet abstraction of Mutt ;-) */
-	// [ Mutt newMessageTo:email withSubject:[ paramDict valueForKey:@"subject" ] andBody:[ paramDict valueForKey:@"body" ] ];
-    
     [mutt setMessageFromDict:paramDict];
     [mutt printMessage];
     [mutt newMessageString];
+   
+    [pool release];  // Release the objects in the pool.
     
     NSLog(@"Bottom of handleEventString\n");
 }

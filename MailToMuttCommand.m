@@ -26,17 +26,11 @@
         [self setScriptErrorString:@"Parameter Error: A Parameter is expect for mailto."];
     }
     
-    [super suspendExecution];
-    
     NSDebug(@"MailTo String:\n%@", stringToSearch);
     
     NSDictionary *userInfo = [NSDictionary dictionaryWithObject:stringToSearch forKey:@"url"];
     
     [[NSNotificationCenter defaultCenter] postNotificationName: @"getURL" object:nil userInfo:userInfo];
-    
-    //[URLHandler handleEventString:stringToSearch];
-    
-    [super resumeExecutionWithResult:nil];
     
     return nil;
 }

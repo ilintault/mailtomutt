@@ -20,6 +20,8 @@
 		3C6786101B235D07005C70FE /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 3C67860D1B235D07005C70FE /* ChangeLog */; };
 		3CB5BD951B211294005C70FE /* MailToMutt.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 3CB5BD941B211294005C70FE /* MailToMutt.sdef */; };
 		3CB5BD971B2112F9005C70FE /* MailToMuttCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5BD961B2112F9005C70FE /* MailToMuttCommand.m */; };
+		3CE1F1DE1B4F42D000964886 /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 3CE1F1DD1B4F42D000964886 /* scripts */; };
+		3CE1F1E01B4F47BC00964886 /* BusyCal in Resources */ = {isa = PBXBuildFile; fileRef = 3CE1F1DF1B4F47BC00964886 /* BusyCal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		3CB5BD931B21122D005C70FE /* MailToMuttCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailToMuttCommand.h; sourceTree = SOURCE_ROOT; };
 		3CB5BD941B211294005C70FE /* MailToMutt.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MailToMutt.sdef; sourceTree = SOURCE_ROOT; };
 		3CB5BD961B2112F9005C70FE /* MailToMuttCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailToMuttCommand.m; sourceTree = SOURCE_ROOT; };
+		3CE1F1DD1B4F42D000964886 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = SOURCE_ROOT; };
+		3CE1F1DF1B4F47BC00964886 /* BusyCal */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BusyCal; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 		24120979144AF386008016C6 /* MailtoMutt */ = {
 			isa = PBXGroup;
 			children = (
+				3CE1F1DF1B4F47BC00964886 /* BusyCal */,
+				3CE1F1DD1B4F42D000964886 /* scripts */,
 				3C67860D1B235D07005C70FE /* ChangeLog */,
 				3C6786091B235CF7005C70FE /* LICENSE */,
 				3C6786071B235CDC005C70FE /* README.md */,
@@ -193,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE1F1E01B4F47BC00964886 /* BusyCal in Resources */,
 				2412099B144AF3F9008016C6 /* MailtoMutt.icns in Resources */,
 				241209A0144AF3F9008016C6 /* version.plist in Resources */,
 				3CB5BD951B211294005C70FE /* MailToMutt.sdef in Resources */,
@@ -200,6 +207,7 @@
 				3C6786101B235D07005C70FE /* ChangeLog in Resources */,
 				241209A6144AF52D008016C6 /* InfoPlist.strings in Resources */,
 				241209A7144AF52D008016C6 /* MainMenu.nib in Resources */,
+				3CE1F1DE1B4F42D000964886 /* scripts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

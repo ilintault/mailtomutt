@@ -31,14 +31,6 @@
 - (void)dealloc
 {
     // Remove any observers or free any necessary cache, etc.
-    
-    [_to release];
-    [_cc release];
-    [_bcc release];
-    [_subject release];
-    [_attachment_url release];
-    [_body release];
-    
     [super dealloc];
 }
 
@@ -142,14 +134,14 @@
     
     [task executeAndReturnError:&error];
     
-    if (error!=nil)
+    if (task == nil)
     {
         NSLog(@"%s AppleScript task error = %@", __PRETTY_FUNCTION__, error);
     }
     else
         NSLog(@"Script executed OK");
     
-    [task release];
+    //[task release];
     
 	/* execute */
 }
@@ -209,7 +201,7 @@
 	/* unlink(template); don't delete the file - mutt probably hasn't openned it. If we can monitor vnode /access/, maybe this can be solved */
 	free(template); /* deallocate the template string */
     
-    [NSApp terminate:nil];
+    //[NSApp terminate:nil];
 }
 
 - (void) setMessageFromDict:(NSMutableDictionary *)dict // create a message from dict pairs

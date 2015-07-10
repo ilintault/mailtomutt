@@ -3,9 +3,8 @@
 
 @interface URLHandler : NSObject
 
-//- (void)awakeFromNib;								// initial action, registers apple event
-- (void)getUrl:(NSAppleEventDescriptor *)event;		// handles the GetURL event
+- (void)getUrl:(NSAppleEventDescriptor *)event;                // handles the GetURL event from mailto:
 - (void)handleEventString:(NSString *)urlString;
-- (void)receiveURLNotification:(NSNotification *) notification;
+- (void)receiveURLNotification:(NSNotification *) notification;  // handles the event from applescript
 
 @end
