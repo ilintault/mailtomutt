@@ -33,12 +33,9 @@ parameter:
 
 AppleScript Example:
 
-    try
-        tell application "/Applications/MailtoMutt.app"
-            mailto "mailto:bogus@email.com?subject=test"
-        end tell
-    on error number -609
-    end try
+   tell application "/Applications/MailtoMutt.app"
+       mailto "mailto:bogus@email.com?subject=test"
+   end tell
 
 See the mailtomutt.scpt in the scripts folder.
 
@@ -55,8 +52,5 @@ and add the script from the BusyCal directory into both of them.  Also, MailToMu
 
 ## Known Issues
 
-* MailToMutt will exit after call mutt and this gives a -609 error in the
-case that it's called via AppleScript.  The workaround is to use a try,
-end try block to quash the error. This error will not affect sending
-mail.
+* There is problem with sending to multiple meeting attendees with BusyCal
 
