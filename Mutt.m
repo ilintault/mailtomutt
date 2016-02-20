@@ -121,8 +121,12 @@
     
     NSLog(@"mutt_command: %@",mutt_command);
     
-	NSString *source = [ NSString stringWithFormat:@"tell application \"/Applications/iTerm.app\"\nmake new terminal\ntell the current terminal\nactivate current session\nlaunch session \"Default Session\"\ntell the last session\nwrite text \"%@\"\nend tell\nend tell\nend tell\n", mutt_command ];
+    // Old Iterm
+	//NSString *source = [ NSString stringWithFormat:@"tell application \"/Applications/iTerm2.app\"\nmake new terminal\ntell the current terminal\nactivate current session\nlaunch session \"Default Session\"\ntell the last session\nwrite text \"%@\"\nend tell\nend tell\nend tell\n", mutt_command ];
 
+    // New Iterm2  tell current window
+    NSString *source = [ NSString stringWithFormat:@"tell application \"/Applications/iTerm.app\"\nactivate\ntell current window\ncreate tab with profile \"Default\"\ntell current session\nwrite text \"%@\"\nend tell\nend tell\nend tell\n", mutt_command];
+   
 	/* create the NSAppleScript object with the source */
     
 	/* create a dictionary in which the execution will store it's errors */
